@@ -1,5 +1,5 @@
 Mark Sigilai
-V00888067
+
 
 The log file system implemented here is able to create, write to and delete files and directories.  These are stored the disk.
 
