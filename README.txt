@@ -9,7 +9,7 @@ Block 2-14 contain inodes storage, with each block containing 10 inodes of size 
 Blocks 14-4096 are free for data storage
 
 All inodes are managed in the array of 120 inodes and when values are changed, the function saveProgress() saves the new inode information to the disk.
-This is done after the completion of a create, write or delete instead of after each change due to how tasking reading and writing is to the system.
+This is done after the completion of a create, write or delete operation instead of after each change due to how tasking reading and writing is to the system.
 There is a possible loss of inode information is an exit occurs during an action and before the saveProgress() has been executed.
 
 Directories are allocated a new block when created. Entries are 32 bytes each, and 16 entries are saved on one directory block.
