@@ -1,4 +1,4 @@
-The log file system implemented here is able to create, write to and delete files and directories.  These are stored on the disk. The disk is seperatoed into blocks.
+The Log File System implemented here is able to create, write to and delete files and directories.  These are stored on the disk. The disk is seperatoed into blocks.
 
 Block 0 contains the superblock with information about the disk
 Block 1 contains the frees vector that is initialized 0's, each bit represents whether a block is free(0) or not(1)
