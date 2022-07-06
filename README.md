@@ -1,7 +1,4 @@
-Mark Sigilai
-
-
-The log file system implemented here is able to create, write to and delete files and directories.  These are stored the disk.
+The log file system implemented here is able to create, write to and delete files and directories.  These are stored on the disk. The disk is seperatoed into blocks.
 
 Block 0 contains the superblock with information about the disk
 Block 1 contains the frees vector that is initialized 0's, each bit represents whether a block is free(0) or not(1)
@@ -16,14 +13,8 @@ Directories are allocated a new block when created. Entries are 32 bytes each, a
 Made persistent when corresponding inodes are saved through saveProgress().
 
 Writes to files are allocated a new block each time with the new data. The block is written to immediately and is therefore always persistent, thus no risk with a possible exit/shutdown.
-It is possible to inplement a buffer to store writes and then save this once the buffer is full, but this brings risk.
-Possible issue with this system is that a new block is always allocated for each write which is wasteful if blocks contain little information
 
+It is possible to implement a buffer to store writes and then save this once the buffer is full, but this would be a possible design consideration for a future project.
 
-TESTS
---------
+Possible issue with this system is that a new block is always allocated for each write which is wasteful if blocks contain little information.
 
-Test 3 must be run after test2 as it shows the persistence of the system by reinitializing the data from test2 and reading it.
-This shows that the system does not lose information after a shutdown.
-
-The function init() must be called before tests.
